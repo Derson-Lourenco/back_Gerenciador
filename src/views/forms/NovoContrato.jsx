@@ -1,45 +1,85 @@
-import { CForm, CCol, CFormInput, CRow, CCard, CCardBody, CCardHeader} from '@coreui/react'
+import { 
+        CForm, 
+        CCol, 
+        CFormInput,
+        CRow, 
+        CCard, 
+        CCardBody,
+        CCardHeader,
+        CInputGroup,
+        CInputGroupText, 
+        CFormLabel,
+        CFormSelect 
+}from '@coreui/react'
 
 
 const NovoContrato = () => {
   const now = new Date
   return (
     <CCard>
-      <CCardHeader>Insira um novo contrato</CCardHeader>
+      <CCardHeader>Campus obrigatórios (*)</CCardHeader>
       <CCardBody>
-        <CRow className="g-2">
-          <CCol sm={4} >
-            <CFormInput label="Nº do processo administrativo"/> 
-            <span>/</span>
-          </CCol>
-          <CCol sm={2}>
-            <CFormInput type='number' defaultValue={now.getFullYear()} label="Ano"/>
-          </CCol>
-          <CCol sm>
-          <CFormInput placeholder="State" aria-label="State"/>
-          </CCol>
-          <CCol sm>
-            <CFormInput placeholder="Zip" aria-label="Zip"/>
-          </CCol>
-        </CRow>
+      <CRow className="g-2 mb-3">
+        <CCol sm={4} >
+        <CFormLabel htmlFor="basic-url" className='required'>Nº do processo adm/Ano </CFormLabel>
+          <CInputGroup>
+              <CFormInput/> 
+              <CInputGroupText>/</CInputGroupText>
+              <CFormInput type='number' defaultValue={now.getFullYear()}/>
+          </CInputGroup>
+        </CCol>
+        <CCol sm={2}>
+          <CFormSelect 
+            label="Modalidade" 
+            options={[
+            'Open this select menu',
+            { label: 'Pregão Presencial', value: '1' },
+            { label: 'Carta Convite', value: '2' },
+            { label: 'Dispensa', value: '3', disabled: true }
+           ]}
+          /> 
+        </CCol>
+      </CRow>
+      <CRow className="g-2 mb-3">
+        <CCol sm={4} >
+        <CFormLabel htmlFor="basic-url" className='required'>Nº do contrato/Ano</CFormLabel>
+          <CInputGroup>
+              <CFormInput/> 
+              <CInputGroupText>/</CInputGroupText>
+              <CFormInput type='number' defaultValue={now.getFullYear()}/>
+          </CInputGroup>
+        </CCol>
+        <CCol sm={2}>
+          <CFormSelect 
+            label="Tipo"
+            options={[
+            'Open this select menu',
+            { label: 'Serviço', value: '1' },
+            { label: 'Produto', value: '2' },
+           ]}
+          /> 
+        </CCol >
+        <CCol sm={4}>
+          <CFormInput type='text' label='Contratante'/>
+        </CCol>
+      </CRow>
+      <CRow className='g-2 mb-3'>
+        <CCol>
+          <CFormInput type='text' label='Empresa/Pessoa Contratada'/>
+        </CCol>
+        <CCol>
+          <CFormInput type='text' label='CNPJ/CPF do Contratado'/>
+        </CCol>
+        <CCol>
+          <CFormInput type='text' label='Valor do Contratado'/>
+        </CCol>
+
+
+      </CRow>
+
+      
       </CCardBody>
     </CCard>
-  
-    /*
-    <CForm className="row g-3">
-      <CCol md={3}>
-        <CCol>
-          <CFormInput type="text" id="nAdm" label="Nº do Processo Administrativo" /> 
-        </CCol>
-        <CCol>
-          <span className="">/</span>
-        </CCol>
-      </CCol>
-      
-      <CCol md={2}>
-        <CFormInput type="number" id="anoContract" label="Ano" defaultValue={now.getFullYear()} />
-      </CCol>
-    </CForm>*/
   )
 }
 
