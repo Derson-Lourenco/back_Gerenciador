@@ -1,16 +1,19 @@
 import { 
-        CForm, 
-        CCol, 
-        CFormInput,
-        CRow, 
-        CCard, 
-        CCardBody,
-        CCardHeader,
-        CInputGroup,
-        CInputGroupText, 
-        CFormLabel,
-        CFormSelect 
+  CForm, 
+  CCol, 
+  CFormInput,
+  CRow, 
+  CCard, 
+  CCardBody,
+  CCardHeader,
+  CInputGroup,
+  CInputGroupText, 
+  CFormLabel,
+  CFormSelect,
+  CFormTextarea
 }from '@coreui/react'
+
+import File from './File'
 
 
 const NovoContrato = () => {
@@ -73,11 +76,32 @@ const NovoContrato = () => {
         <CCol>
           <CFormInput type='text' label='Valor do Contratado'/>
         </CCol>
-
-
       </CRow>
-
-      
+      <CRow className='g-2 mb-3'>
+        <CCol>
+          <CFormInput type='date' label='Data da Assinatura'/>
+        </CCol>
+        <CCol>
+          <CFormInput type='date' label='Data de Incío'/>
+        </CCol>
+        <CCol>
+          <CFormInput type='date' label='Data de Finalização'/>
+        </CCol>
+      </CRow>
+      <CRow className='g-2 mb-3'>
+        <CCol>
+          <CFormTextarea
+          id="exampleFormControlTextarea1"
+          label="Objeto do Contrato"
+          rows={4}
+        ></CFormTextarea>
+        </CCol>
+      </CRow>
+      <CRow>
+        <CCol sm={3} >
+          <File />
+        </CCol>
+      </CRow>
       </CCardBody>
     </CCard>
   )
