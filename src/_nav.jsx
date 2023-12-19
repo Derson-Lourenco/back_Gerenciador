@@ -12,7 +12,9 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
-  cibAddthis
+  cibAddthis,
+  cilFindInPage
+
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
@@ -30,7 +32,7 @@ const _nav = [
  
   {
     component: CNavTitle,
-    name: 'Contratos',
+    name: 'Gerenciar Contratos',
   },
   
   {
@@ -38,6 +40,18 @@ const _nav = [
     name: 'Novo contrato',
     to: '/NovoContrato',
     icon: <CIcon icon={cibAddthis} customClassName="nav-icon" />,
+  },
+
+  {
+    component: CNavItem,
+    name: 'Pesquisar Contrato',
+    to: '/Contratos',
+    icon: <CIcon icon={cilFindInPage} customClassName="nav-icon" />,
+  },
+
+  {
+    component: CNavTitle,
+    name: 'Gerenciar Documentos',
   },
   /*
   {
