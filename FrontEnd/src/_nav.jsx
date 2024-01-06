@@ -1,27 +1,30 @@
-import React from 'react'
+// import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
-  cilCursor,
+  // cilBell,
+  // cilCalculator,
+  // cilChartPie,
+  // cilCursor,
   cilDescription,
-  cilDrop,
-  cilNotes,
-  cilPencil,
-  cilPuzzle,
+  // cilDrop,
+  // cilNotes,
+  // cilPencil,
+  // cilPuzzle,
   cilSpeedometer,
-  cilStar,
-  cibAddthis,
-  cilFindInPage
+  // cilStar,
+  // cibAddthis,
+  cilFindInPage,
+  cilPlus,
+  cilGlobeAlt
 
 } from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+//import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import {CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
   {
     component: CNavItem,
-    name: 'Dashboard',
+    name: 'Painel',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     badge: {
@@ -39,7 +42,7 @@ const _nav = [
     component: CNavItem,
     name: 'Novo contrato',
     to: '/NovoContrato',
-    icon: <CIcon icon={cibAddthis} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPlus} customClassName="nav-icon" />,
   },
 
   {
@@ -53,6 +56,26 @@ const _nav = [
     component: CNavTitle,
     name: 'Gerenciar Documentos',
   },
+
+  {
+    component: CNavItem,
+    name: 'Documentação',
+    to: '/Documentos',
+    icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+  },
+
+  {
+    component: CNavTitle,
+    name: 'Gerenciar Licitações',
+  },
+
+  {
+    component: CNavItem,
+    name: 'Pesquisar',
+    to: '/Licitacao',
+    icon: <CIcon icon={cilGlobeAlt} customClassName="nav-icon" />,
+  },
+
   /*
   {
     component: CNavItem,
@@ -314,9 +337,9 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Docs',
-    href: 'https://coreui.io/react/docs/templates/installation/',
-    icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+    name: 'Pesquisar',
+    href: 'https://sistemas.tce.pi.gov.br/licitacoesweb/mural/',
+    icon: <CIcon icon={cilGlobeAlt} customClassName="nav-icon" />,
   },
   */
 ]

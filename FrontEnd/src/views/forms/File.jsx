@@ -40,11 +40,18 @@ const File = () => {
           <CFormSelect 
             label="Tipo"
             options={[
-            'Open this select menu',
-            { label: 'Contrato', value: '1' },
-            { label: 'Extratp', value: '2' },
+            '',
+            { label: 'Proposta Readequada', value: '1' },
+            { label: 'Contrato', value: '2' },
+            { label: 'Extrato de Contrato', value: '3' },
+            { label: 'Aditivo', value: '4' },
+            { label: 'Controle de Nota', value: '5' },
+            
            ]}
           /> 
+        </CCol >
+        <CCol sm={4}>
+          Modelo de Planilha 
         </CCol >
         </CRow>
         <CRow className="mb-3">
