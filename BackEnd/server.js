@@ -4,7 +4,7 @@ const routes = require('./routes/contratos');
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 3001;
 
 
 // Middleware para registrar solicitações
